@@ -1,0 +1,184 @@
+@import url("https://fonts.cdnfonts.com/css/garant-pro");
+
+:root {
+  --CL-blue: rgb(83, 143, 251);
+  --CL-purple-dark: rgb(69, 48, 190);
+  --CL-black: rgb(0, 0, 0);
+  --CL-white: rgb(255, 255, 255);
+
+  --CL-instagram: rgb(199, 5, 151);
+  --CL-whatsapp: rgb(16, 158, 42);
+  --CL-facebook: rgb(70, 104, 216);
+}
+
+*,
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Garant Pro", sans-serif;
+  transition: 0.15s;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  padding: 10vh 1rem;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.outline {
+  outline: 3px solid var(--CL-purple-dark);
+}
+
+/* BACKGROUND COLORS */
+
+.bg-facebook {
+  background-color: var(--CL-facebook);
+}
+
+.bg-instagram {
+  background-color: var(--CL-instagram);
+}
+
+.bg-whatsapp {
+  background-color: var(--CL-whatsapp);
+}
+
+.bg-link {
+  background-color: var(--CL-black);
+}
+
+/* TEXT COLORS */
+
+.text-black {
+  color: var(--CL-black);
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: var(--CL-black);
+  mix-blend-mode: overlay;
+  z-index: -100;
+}
+
+main {
+  display: inherit;
+  place-items: center;
+  place-content: center;
+}
+
+.card {
+  width: min(100%, 25rem);
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.card-header {
+  background-image: url("../images/pattern.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px 9px 0 0;
+  height: 10rem;
+}
+
+.card-background {
+  border-radius: inherit;
+  height: 100%;
+}
+
+.card-logo {
+  display: block;
+  scale: 33%;
+  border-radius: 100rem;
+}
+
+.card-body {
+  text-align: center;
+  border-radius: 0 0 11px 11px;
+}
+
+.card-author {
+  display: flex;
+  flex-direction: column;
+  margin-block: 1.5rem;
+}
+
+.card-title {
+  margin-block: 0;
+  font-size: clamp(1.5rem, 1rem + 2vw, 1.6rem);
+}
+
+.card-description {
+  max-width: 80%;
+  margin: 0 auto;
+  font-size: clamp(0.8rem, 0.8rem + 2vw, 0.9rem);
+}
+
+.card-grid {
+  list-style: none;
+  padding: 0 1rem 1rem 1rem;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  place-items: center;
+  gap: 1rem;
+}
+
+.link-item {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  color: var(--CL-white);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: clamp(0.8rem, 0.8rem + 2vw, 0.95rem);
+  font-weight: bold;
+}
+
+/* DESKTOP VERSION */
+
+@media (min-width: 1000px) {
+  body {
+    height: 100vh;
+  }
+
+  .link-item:hover {
+    background-color: var(--CL-purple-dark);
+  }
+
+  .link-item:active {
+    background-color: var(--CL-black);
+  }
+}
