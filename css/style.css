@@ -1,4 +1,6 @@
 @import url("https://fonts.cdnfonts.com/css/garant-pro");
+@import url('https://fonts.cdnfonts.com/css/invisible-2');
+@import url('https://fonts.cdnfonts.com/css/qanelas-soft');
 
 :root {
   --CL-blue: rgb(83, 143, 251);
@@ -6,35 +8,33 @@
   --CL-black: rgb(0, 0, 0);
   --CL-white: rgb(255, 255, 255);
 
-  --CL-instagram: rgb(199, 5, 151);
+  --CL-instagram: rgb(201, 31, 158);
   --CL-whatsapp: rgb(16, 158, 42);
   --CL-facebook: rgb(70, 104, 216);
+
 }
 
 *,
 html {
   box-sizing: border-box;
   font-size: 16px;
-  font-family: "Garant Pro", sans-serif;
+  font-family: 'Qanelas Soft', sans-serif;
   transition: 0.15s;
 }
 
-html {
-  height: 100%;
-}
-
 body {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction:  column;
   background-image: url(../images/background.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding: 5vh 0;
   margin: 0;
-  padding: 10vh 1rem;
 }
 
 img {
@@ -43,8 +43,10 @@ img {
   object-position: 50% 50%;
 }
 
+
+
 .outline {
-  outline: 3px solid var(--CL-purple-dark);
+  border: 3px solid var(--CL-purple-dark);
 }
 
 /* BACKGROUND COLORS */
@@ -83,17 +85,25 @@ img {
 }
 
 main {
+  flex: 3;
   display: inherit;
-  place-items: center;
-  place-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .card {
-  width: min(100%, 25rem);
+  max-width: 90%;
   display: flex;
   flex-direction: column;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -khtml-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
+  z-index: 100;
 }
 
 .card-header {
@@ -101,11 +111,10 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9px 9px 0 0;
-  height: 10rem;
+  display: grid;
+  place-items: center;
+  border-radius: 12px 12px 0 0;
+  height: 8rem;
 }
 
 .card-background {
@@ -114,8 +123,8 @@ main {
 }
 
 .card-logo {
-  display: block;
-  scale: 33%;
+  width: 6rem;
+  height: 6rem;
   border-radius: 100rem;
 }
 
@@ -127,51 +136,65 @@ main {
 .card-author {
   display: flex;
   flex-direction: column;
-  margin-block: 1.5rem;
+  margin: 1rem auto;
 }
 
 .card-title {
-  margin-block: 0;
-  font-size: clamp(1.5rem, 1rem + 2vw, 1.6rem);
+  margin: 0.5rem auto;
+  font-size: 1.6rem;
+  font-family: "Invisible", sans-serif;
 }
 
 .card-description {
-  max-width: 80%;
+  max-width: 85%;
   margin: 0 auto;
-  font-size: clamp(0.8rem, 0.8rem + 2vw, 0.9rem);
+  font-size: 0.9rem;
 }
 
 .card-grid {
-  list-style: none;
   padding: 0 1rem 1rem 1rem;
   display: grid;
   grid-auto-flow: row;
   grid-auto-rows: 1fr;
   place-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .link-item {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 4vw 1fr 4vw;
+  place-items: center;
   padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  gap: 0.5rem;
   width: 100%;
   height: 100%;
   color: var(--CL-white);
   border-radius: 0.5rem;
   text-decoration: none;
-  font-size: clamp(0.8rem, 0.8rem + 2vw, 0.95rem);
-  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+footer a{
+  color: var(--CL-white);
+  text-decoration: none;
+  opacity: 0.5;
+  margin: 0 auto;
 }
 
 /* DESKTOP VERSION */
 
-@media (min-width: 1000px) {
+@media (min-width: 480px) {
+
+  .card {
+    max-width: 30rem;
+  }
+
   body {
     height: 100vh;
+  }
+
+  .link-item{
+    font-size: 1rem;
   }
 
   .link-item:hover {
@@ -180,5 +203,12 @@ main {
 
   .link-item:active {
     background-color: var(--CL-black);
+  }
+
+  footer a:hover{
+    color: var(--CL-white);
+    text-decoration: none;
+    opacity: 1;
+    margin: 0 auto;
   }
 }
