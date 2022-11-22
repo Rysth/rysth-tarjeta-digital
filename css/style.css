@@ -1,24 +1,23 @@
 @import url("https://fonts.cdnfonts.com/css/garant-pro");
-@import url('https://fonts.cdnfonts.com/css/invisible-2');
-@import url('https://fonts.cdnfonts.com/css/qanelas-soft');
+@import url("https://fonts.cdnfonts.com/css/invisible-2");
+@import url("https://fonts.cdnfonts.com/css/qanelas-soft");
 
 :root {
-  --CL-blue: rgb(83, 143, 251);
-  --CL-purple-dark: rgb(69, 48, 190);
+  --CL-primary: rgb(83, 143, 251);
+  --CL-secondary: rgb(69, 48, 190);
   --CL-black: rgb(0, 0, 0);
   --CL-white: rgb(255, 255, 255);
 
-  --CL-instagram: rgb(201, 31, 158);
+  --CL-instagram: rgb(201, 7, 201);
   --CL-whatsapp: rgb(16, 158, 42);
   --CL-facebook: rgb(70, 104, 216);
-
 }
 
 *,
 html {
   box-sizing: border-box;
   font-size: 16px;
-  font-family: 'Qanelas Soft', sans-serif;
+  font-family: "Qanelas Soft", sans-serif;
   transition: 0.15s;
 }
 
@@ -28,7 +27,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction:  column;
+  flex-direction: column;
   background-image: url(../images/background.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -43,10 +42,13 @@ img {
   object-position: 50% 50%;
 }
 
-
-
-.outline {
-  border: 3px solid var(--CL-purple-dark);
+main {
+  flex: 3;
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
 }
 
 /* BACKGROUND COLORS */
@@ -73,6 +75,12 @@ img {
   color: var(--CL-black);
 }
 
+.text-white{
+  color: var(--CL-white);
+}
+
+/* GENERAL STYLES */
+
 .background-overlay {
   position: fixed;
   top: 0;
@@ -84,25 +92,20 @@ img {
   z-index: -100;
 }
 
-main {
-  flex: 3;
-  display: inherit;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
+.outline {
+  border: 3px solid var(--CL-white);
 }
 
 .card {
-  max-width:85%;
+  max-width: 85%;
   display: flex;
   flex-direction: column;
-  background-color: white;
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
   -khtml-border-radius: 1rem;
   -moz-border-radius: 1rem;
   border-radius: 1rem;
+  background-color: var(--CL-white);
   z-index: 100;
 }
 
@@ -113,8 +116,8 @@ main {
   background-repeat: no-repeat;
   display: grid;
   place-items: center;
+  padding: 1rem;
   border-radius: 12px 12px 0 0;
-  height: 8rem;
 }
 
 .card-background {
@@ -126,6 +129,8 @@ main {
   width: 6rem;
   height: 6rem;
   border-radius: 100rem;
+  margin: 0 auto 0.5rem auto;
+  background-color: var(--CL-white);
 }
 
 .card-body {
@@ -136,11 +141,12 @@ main {
 .card-author {
   display: flex;
   flex-direction: column;
-  margin: 1rem auto;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .card-title {
-  margin: 0.5rem auto;
+  margin: 0 auto;
   font-size: 1.6rem;
   font-family: "Invisible", sans-serif;
 }
@@ -152,20 +158,20 @@ main {
 }
 
 .card-grid {
-  padding: 0 1rem 1rem 1rem;
+  padding: 1rem;
   display: grid;
   grid-auto-flow: row;
   grid-auto-rows: 1fr;
   place-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .link-item {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 4vw 1fr 4vw;
+  grid-auto-columns: 1.5rem 1fr 1.5rem;
   place-items: center;
-  padding: 0.5rem;
+  padding: 1rem;
   width: 100%;
   height: 100%;
   color: var(--CL-white);
@@ -174,7 +180,7 @@ main {
   font-size: 0.9rem;
 }
 
-footer a{
+footer a {
   color: var(--CL-white);
   text-decoration: none;
   opacity: 0.5;
@@ -184,28 +190,27 @@ footer a{
 /* DESKTOP VERSION */
 
 @media (min-width: 480px) {
-
   .card {
-    max-width: 30rem;
+    width: 25rem;
   }
 
   body {
     height: 100vh;
   }
 
-  .link-item{
+  .link-item {
     font-size: 1rem;
   }
 
   .link-item:hover {
-    background-color: var(--CL-purple-dark);
+    background-color: var(--CL-secondary);
   }
 
   .link-item:active {
     background-color: var(--CL-black);
   }
 
-  footer a:hover{
+  footer a:hover {
     color: var(--CL-white);
     text-decoration: none;
     opacity: 1;
