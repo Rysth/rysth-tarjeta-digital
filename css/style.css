@@ -39,7 +39,6 @@ body {
 img {
   width: 100%;
   object-fit: cover;
-  object-position: 50% 50%;
 }
 
 main {
@@ -131,6 +130,13 @@ main {
   border-radius: 100rem;
   margin: 0 auto 0.5rem auto;
   background-color: var(--CL-white);
+}
+
+.logo{
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
 }
 
 .card-body {
