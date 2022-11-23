@@ -137,6 +137,11 @@ main {
   width: 100%;
   height: 100%;
   border-radius: inherit;
+
+  -webkit-border-radius: inherit;
+     -khtml-border-radius: inherit;
+       -moz-border-radius: inherit;
+            border-radius: inherit;
 }
 
 .card-body {
